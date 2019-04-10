@@ -7,7 +7,6 @@ public class PrivateClass {
         System.out.println("私有构造方法");
         throw new RuntimeException();
     }
-    private String string;
     public static void isEmpty(String string){
         if(string == null || "".equals(string)) {
             System.out.println("空");
