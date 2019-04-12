@@ -43,15 +43,6 @@ public class BlockingQueueTest {
             };
             new Thread(enumerator).start();
 
-            /*之所以没有文件，是因为线程还没有真正执行(可执行态)*/
-//            try{
-//                System.out.println(Thread.currentThread());
-//                Thread.sleep(2000);
-//            }catch(InterruptedException e){
-//                e.printStackTrace();
-//            }
-//            System.out.println(queue);
-
             for(int i = 1;i <= SEARCH_THREADS;i++){
                 System.out.println("==========="+i+"===========");
                 Runnable searcher = () -> {
