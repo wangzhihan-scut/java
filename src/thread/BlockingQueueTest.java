@@ -9,6 +9,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 /**
+ * 生产者消费者从某个目录下找到输出含有某个关键字的全部文件
  * @Author: wangzh
  * @Date: 2019/4/11 0011 16:11
  */
