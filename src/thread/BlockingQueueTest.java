@@ -1,15 +1,15 @@
 package thread;
 
-import sun.security.provider.NativePRNG;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * 生产者消费者从某个目录下找到输出含有某个关键字的全部文件
+ * 生产者消费者从某个目录下找到输出含有某个关键字的全部文件，打印包含关键字的行
  * @Author: wangzh
  * @Date: 2019/4/11 0011 16:11
  */
@@ -17,13 +17,20 @@ public class BlockingQueueTest {
     private static final int FILE_QUEUE_SIZE = 10;
     private static final int SEARCH_THREADS = 15;
     /**
-     * dummy虚拟文件，因为只有一个生产者，防止线程获取不到文件无限阻塞下去
+     * dummy虚拟文件，因为只有一个生产者，防止线程获取不到文件无限阻塞下去，消费者获取到dummy时，将其放回并终止
      */
     private static final File Dummy = new File("");
     /**
      * 共享队列，当队列为空或者为满时会阻塞当前线程（生产者或者消费者）
      */
+    /**
+     * 循环数组实现
+     */
     private static BlockingQueue<File> queue = new ArrayBlockingQueue<>(FILE_QUEUE_SIZE);
+    /**
+     * 链表实现
+     */
+    private static BlockingQueue<File> queue1 = new LinkedBlockingQueue<>(FILE_QUEUE_SIZE);
 
     public static void main(String[] args){
         try(Scanner in = new Scanner(System.in)){
