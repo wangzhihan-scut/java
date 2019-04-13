@@ -1,3 +1,5 @@
+package jvm;
+
 import javax.print.attribute.standard.MediaSize;
 import java.util.ArrayList;
 import java.util.List;
@@ -5,6 +7,7 @@ import java.util.List;
 /**
  * 测试堆溢出
  * VM args: -Xms3m -Xmx3m -XX:+HeapDumpOnOutOfMemoryError
+ * jhat工具来查看jvm内存情况
  * @Author: wangzh
  * @Date: 2019/4/12 0012 19:46
  */
