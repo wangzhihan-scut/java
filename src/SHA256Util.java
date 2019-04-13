@@ -3,6 +3,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
+ * 项目中用到，比如密码或者私密信息加密等等
  * @Author: wangzh
  * @Date: 2019/4/10 0010 14:52
  */
