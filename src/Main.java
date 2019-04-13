@@ -1,29 +1,25 @@
-import com.sun.org.apache.xerces.internal.impl.dv.util.HexBin;
+import util.SHA256Util;
 
-import java.io.UnsupportedEncodingException;
-import java.net.CookieHandler;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.regex.Pattern;
 
 public class Main {
 
     public static void main(String[] args) {
-//        String s = "";
-//        if(s.equals(null)){
-//            System.out.println("一样");
-//        }
-//        else{
-//            System.out.println("不一样");
-//        }
-//        PrivateClass.isEmpty(s);
-//        s = "18051294201@13.com";
-//        if(Pattern.matches("^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$",s)){
-//            System.out.println("匹配");
-//        }
-//        else{
-//            System.out.println("不匹配");
-//        }
+        String s = "";
+        if(s.equals(null)){
+            System.out.println("一样");
+        }
+        else{
+            System.out.println("不一样");
+        }
+        PrivateClass.isEmpty(s);
+        s = "18051294201@13.com";
+        if(Pattern.matches("^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$",s)){
+            System.out.println("匹配");
+        }
+        else{
+            System.out.println("不匹配");
+        }
 
         String input = "xiaohaitun";
         String encrpt = SHA256Util.SHA256(input);
