@@ -4,6 +4,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 
 /**
+ * FutureTask和Callable的基本使用
  * @Author: wangzh
  * @Date: 2019/4/13 0013 12:05
  */
@@ -11,6 +12,7 @@ public class TestCallable implements Callable<Integer>{
     private static int number = 0;
     @Override
     public Integer call() throws Exception {
+        System.out.println(Thread.currentThread());
         return ++number;
     }
     public static void main(String[] args){
