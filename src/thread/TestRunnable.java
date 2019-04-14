@@ -4,7 +4,7 @@ package thread;
  * @Author: wangzh
  * @Date: 2019/4/11 0011 10:59
  */
-public class Test {
+public class TestRunnable {
     public static void main(String[] args) {
         Runner1 runner1 = new Runner1();
 //        Runner1 runner11 = new Runner1();
@@ -21,8 +21,8 @@ public class Test {
         thread2.start();
 //        thread1.start();
         //直接调用run
-//        thread1.run();
-//        thread2.run();
+        thread1.run();
+        thread2.run();
     }
 }
 
