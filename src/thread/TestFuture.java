@@ -49,7 +49,7 @@ class MatchCounter implements Callable<Integer>{
 
             for(File file : files){
                 if(file.isDirectory()){
-                    MatchCounter matchCounter = new MatchCounter(directory, keyword);
+                    MatchCounter matchCounter = new MatchCounter(file, keyword);
                     FutureTask<Integer> futureTask = new FutureTask<>(matchCounter);
                     results.add(futureTask);
                     new Thread(futureTask).start();
