@@ -15,9 +15,10 @@ import java.util.concurrent.*;
 public class TestThreadPool {
     public static File root_directory = new File("E:\\study\\test");
     public static String keyword = "hello";
-    public final static int MAX_THREAD_NUM = 10;
+    public final static int MAX_THREAD_NUM = 5;
     public static void main(String[] args){
-        ExecutorService executorService = Executors.newCachedThreadPool();
+        ExecutorService executorService = Executors.newFixedThreadPool(MAX_THREAD_NUM);
+//        ExecutorService executorService = Executors.newCachedThreadPool();
         MatchCounter matchCounter = new MatchCounter(root_directory, keyword, executorService);
         Future<Integer> future = executorService.submit(matchCounter);
         try{
