@@ -51,7 +51,7 @@ class MatchCounter implements Callable<Integer>{
 
             for(File file : files){
                 if(file.isDirectory()){
-                    MatchCounter matchCounter = new MatchCounter(directory, keyword, pool);
+                    MatchCounter matchCounter = new MatchCounter(file, keyword, pool);
                     Future<Integer> result = pool.submit(matchCounter);
                     results.add(result);
                 }else{
