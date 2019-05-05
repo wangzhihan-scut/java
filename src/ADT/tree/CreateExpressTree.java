@@ -58,7 +58,7 @@ public class CreateExpressTree {
     /**
      * 中缀表达式转后缀表达式
      * @param express
-     * @return
+     * @return 后缀表达式字符串
      */
     String in2postExpress(String express){
         StringBuilder postExpress = new StringBuilder();
@@ -91,7 +91,7 @@ public class CreateExpressTree {
     /**
      * 后缀表达式转树
      * @param express
-     * @return
+     * @return 转化后树根节点
      */
     TreeNode postExpressTree(String express){
         Stack<TreeNode> treeNodeStack = new Stack<>();
@@ -115,7 +115,7 @@ public class CreateExpressTree {
         System.out.println(root.right.left.val);
 
         String infixExpress = "a+b*c+((d*e+f)*g+h/i)";
-//        infixExpress = "a+b-v";
+        infixExpress = "a+b-v";
         System.out.println("前缀表达式：" + infixExpress);
         System.out.println("后缀表达式：" + createExpressTree.in2postExpress(infixExpress));
     }
