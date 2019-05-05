@@ -49,7 +49,7 @@ public class TestMongodb {
         */
         MongoClient mongoClient = new MongoClient(serverAddresses, mongoCredential, MongoClientOptions.builder().build());
 
-        //spring里面有更好的封装MongoTemplate
+        //spring里面有更好的封装MongoTemplate, 通过工厂类实现封装
         MongoDatabase mongoDatabase = mongoClient.getDatabase(DATABASE);
         MongoCollection<Document> firstCollection = mongoDatabase.getCollection(TestMongodb.collections.get(0));
         System.out.println(firstCollection);
@@ -83,6 +83,7 @@ public class TestMongodb {
         List<Document> pipeline = new ArrayList<>();
         pipeline.add(new Document("$match", new Document("id", new Document("$exists",true))));
         pipeline.add(new Document("$group", new Document("_id","$id").append("count" ,new Document("$sum", 1))));
+        pipeline.add(new Document("$limit", 2));
 
 //        mongoCursor = firstCollection.aggregate(pipeline).iterator();
 //        while(mongoCursor.hasNext()){
