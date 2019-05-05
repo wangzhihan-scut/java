@@ -115,7 +115,7 @@ public class CreateExpressTree {
         System.out.println(root.right.left.val);
 
         String infixExpress = "a+b*c+((d*e+f)*g+h/i)";
-        infixExpress = "a+b-v";
+//        infixExpress = "a+b-v";
         System.out.println("前缀表达式：" + infixExpress);
         System.out.println("后缀表达式：" + createExpressTree.in2postExpress(infixExpress));
     }
