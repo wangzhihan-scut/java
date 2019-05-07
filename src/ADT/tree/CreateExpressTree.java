@@ -46,12 +46,9 @@ public class CreateExpressTree {
         return false;
     }
     boolean isNum(Character character){
-        boolean flag = false;
-        if((character >= '0' && character <= '9')
+        boolean flag = (character >= '0' && character <= '9')
                 || (character >= 'a' && character <= 'z')
-                || (character >= 'A' && character <= 'Z')){
-            flag = true;
-        }
+                || (character >= 'A' && character <= 'Z');
         return flag;
     }
 
