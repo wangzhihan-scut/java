@@ -1,7 +1,7 @@
 package ADT.tree;
 
-import java.lang.annotation.ElementType;
-import java.util.Random;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * @Author: wangzh
@@ -115,6 +115,7 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
             root.right = remove(x, root.right);
         }else{
             if(root.left != null && root.right != null){
+                //找到左子树最小的作为根节点，缺点：删除操作导致右子树比左子树深
                 root.element = findMin(root).element;
                 root.left = remove(root.element, root.left);
             }else {
