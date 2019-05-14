@@ -1,12 +1,12 @@
 package ADT.hashing;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  * 分离链接法解决hash冲突
+ * 再散列建立更大的hash表，大小为原来的两倍以上，然后复制原有元素
  * @Author: wangzh
  * @Date: 2019/5/13 0013 10:16
  */
@@ -66,7 +66,18 @@ public class SeperateChainingHashTable<AnyType> {
         return hashVal;
     }
     private void rehash(){
+        List<AnyType>[] oldLists = theLists;
+        theLists = new List[nextPrime(2 * theLists.length)];
+        for(int i = 0;i < theLists.length;i++){
+            theLists[i] = new LinkedList<>();
+        }
 
+        currentSize = 0;
+        for(int i = 0;i < oldLists.length;i++){
+            for(AnyType item: oldLists[i]){
+                insert(item);
+            }
+        }
     }
 
     /**

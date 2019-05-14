@@ -1,6 +1,5 @@
 package ADT.tree;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -109,6 +108,18 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
             return null;
         }
         int compareResult = x.compareTo(root.element);
+        Arrays.sort(new BinarySearchTree[]{}, new Comparator<BinarySearchTree>(){
+            @Override
+            public int compare(BinarySearchTree o1, BinarySearchTree o2) {
+                return 0;
+            }
+        });
+        Collections.sort(new ArrayList<BinarySearchTree>(){}, new Comparator<BinarySearchTree>(){
+            @Override
+            public int compare(BinarySearchTree o1, BinarySearchTree o2) {
+                return 0;
+            }
+        });
         if(compareResult < 0){
             root.left = remove(x, root.left);
         }else if(compareResult > 0){
